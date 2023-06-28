@@ -1,0 +1,21 @@
+products,category,units,mrp,total,buyer,location
+tomatoe,vegetables,5,15,75,Hawkeye,bangaluru north
+rice,grains and cerials,3,50,150,Thor,bangaluru east
+grapes,fruits,2,40,80,Hulk,bangaluru north
+bananas,fruits,5,30,150,Thor,bangaluru east
+bell pepper,vegetables,3,30,90,Captain Marvel,bangaluru north
+potato,vegetables,3,20,60,Captain America,bangaluru south
+pasta,grains and cerials,3,25,75,Black Widow,bangaluru west
+oranges,fruits,4,35,140,Black Widow,bangaluru west
+pasta,grains and cerials,3,25,75,Hawkeye,bangaluru north
+oats,grains and cerials,2,30,60,Thor,bangaluru east
+tomatoe,vegetables,4,15,60,Doctor Strange,bangaluru west
+oats,grains and cerials,1,30,30,Hulk,bangaluru north
+wheat,grains and cerials,5,30,150,Captain Marvel,bangaluru north
+rice,grains and cerials,3,50,150,Hawkeye,bangaluru north
+bananas,fruits,5,30,150,Thor,bangaluru east
+wheat,grains and cerials,4,30,120,Spider-Man,bangaluru north
+pasta,grains and cerials,1,25,25,Doctor Strange,bangaluru west
+tomatoe,vegetables,5,15,75,Spider-Man,bangaluru north
+tomatoe,vegetables,2,15,30,Spider-Man,bangaluru north
+bell pepper,vegetables,1,30,30,Doctor Strange,bangaluru west

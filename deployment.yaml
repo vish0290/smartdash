@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: DB
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sqlite3-container
+  template:
+    metadata:
+      labels:
+        app: sqlite3-container
+    spec:
+      containers:
+        - name: sqlite3-container
+          image: nouchka/sqlite3:latest
+          ports:
+            - containerPort: 9000
+          volumeMounts:
+            - name: sqlite3-volume
+              mountPath: /root/db
+      volumes:
+        - name: sqlite3-volume
+          emptyDir: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: API
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: vish29/sd-backend
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE_URL
+              value: sqlite:///main.db
+          volumeMounts:
+            - name: sqlite3-volume
+              mountPath: /root/db
+      volumes:
+        - name: sqlite3-volume
+          emptyDir: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: vish29/sd-client
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: sqlite3-volume
+              mountPath: /root/db
+      volumes:
+        - name: sqlite3-volume
+          emptyDir: {}
